@@ -650,3 +650,27 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
     border-radius: 6px;
     cursor: pointer;
 }
+
+
+.video-wrapper {
+    position: relative;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* transparent layer */
+    background: transparent;
+
+    /* block clicks on youtube UI */
+    z-index: 2;
+}
