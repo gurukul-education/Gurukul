@@ -664,8 +664,8 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
     position: absolute;
     top: 0;
     right: 0;
-    width: 150px;
-    height: 90px;
+    width: 200px;
+    height: 1200px;
     z-index: 5;
 }
 
@@ -674,8 +674,8 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 150px;
-    height: 90px;
+    width: 200px;
+    height: 120px;
     z-index: 5;
 }
 
