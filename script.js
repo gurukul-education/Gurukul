@@ -64,3 +64,27 @@ function toggleFullscreen() {
         }
     }
 }
+
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('mainVideo');
+}
+
+function playYT() {
+    player.playVideo();
+}
+
+function pauseYT() {
+    player.pauseVideo();
+}
+
+function playVideo(id, title, element) {
+    player.loadVideoById(id);
+
+    document.getElementById("videoTitle").innerText = title;
+
+    document.querySelectorAll(".video-item").forEach(v => v.classList.remove("active"));
+    element.classList.add("active");
+}
