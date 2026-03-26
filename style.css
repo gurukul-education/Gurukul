@@ -283,6 +283,8 @@ nav a.active {
     transform: translateY(40px) scale(0.95);
     filter: blur(8px);
 
+    will-change: transform, opacity;
+    backface-visibility: hidden;
     transition: 
         opacity 0.8s ease,
         transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
@@ -616,4 +618,8 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
 
 .video-controls button:hover {
     transform: scale(1.1);
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
