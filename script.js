@@ -32,43 +32,35 @@ function toggleTheme() {
     }
 }
 
-function toggleFullscreen() {
-    const video = document.getElementById("mainVideo");
+// 🎬 PLAY YOUTUBE VIDEO
+function playVideo(id, title, element) {
+    const iframe = document.getElementById("mainVideo");
 
-    if (!document.fullscreenElement) {
+    // change video
+    iframe.src = "https://www.youtube.com/embed/" + id;
 
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } 
-        else if (video.webkitRequestFullscreen) {  // Safari
-            video.webkitRequestFullscreen();
-        } 
-        else if (video.msRequestFullscreen) {  // IE
-            video.msRequestFullscreen();
-        }
+    // change title
+    document.getElementById("videoTitle").innerText = title;
 
-    } else {
-
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } 
-        else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } 
-        else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-
-    }
+    // active class
+    document.querySelectorAll(".video-item").forEach(v => v.classList.remove("active"));
+    element.classList.add("active");
 }
 
 
+// 🔳 FULLSCREEN (works with iframe)
 function toggleFullscreen() {
     const video = document.getElementById("mainVideo");
 
     if (!document.fullscreenElement) {
-        video.requestFullscreen().catch(() => {});
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        }
     } else {
-        document.exitFullscreen();
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
     }
 }
