@@ -1,56 +1,100 @@
-<div class="player-layout">
-<link rel="stylesheet" href="style.css">
-    <!-- 🎬 MAIN VIDEO -->
-    <div class="video-section">
-        <div class="video-wrapper">
-            <iframe id="mainVideo"
-                src="https://www.youtube.com/embed/VIDEO1"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Graphic Design Course</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+
+<section class="course-player">
+
+    <h1>Graphic Design Course</h1>
+
+    <div class="player-layout">
+     
+        <!-- 🎬 VIDEO PLAYER -->
+        <div class="video-section">
+
+            <div class="video-wrapper">
+                
+               <video id="mainVideo" src="v1.mp4" controls controlsList="nodownload"></video>
+<div class="video-controls">
+    <button onclick="toggleFullscreen()">⛶ Fullscreen</button>
+</div>
+                <!-- 🔥 LOGO OVER VIDEO -->
+                <img src="mainlogo.png" class="video-logo">
+            </div>
+
+            <h3 id="videoTitle">Video 1</h3>
+
         </div>
 
-        <h3 id="videoTitle">1. Introduction</h3>
+        <!-- 📃 PLAYLIST -->
+        <div class="playlist">
+
+            <!-- 33 VIDEOS -->
+            <div class="video-item active" onclick="playVideo('v1.mp4', 'Introduction', this)">1. Introduction</div>
+            <div class="video-item" onclick="playVideo('v2.mp4', 'Basics',this)">2. Basics</div>
+            <div class="video-item" onclick="playVideo('v3.mp4', 'Tools',this)">3. Tools</div>
+
+            <!-- CONTINUE SAME -->
+            <div class="video-item" onclick="playVideo('v4.mp4', 'Lesson 4',this)">4. Lesson 4</div>
+            <div class="video-item" onclick="playVideo('v5.mp4', 'Lesson 5',this)">5. Lesson 5</div>
+            <div class="video-item" onclick="playVideo('v6.mp4', 'Lesson 6',this)">6. Lesson 6</div>
+            <div class="video-item" onclick="playVideo('v7.mp4', 'Lesson 7',this)">7. Lesson 7</div>
+            <div class="video-item" onclick="playVideo('v8.mp4', 'Lesson 8',this)">8. Lesson 8</div>
+            <div class="video-item" onclick="playVideo('v9.mp4', 'Lesson 9',this)">9. Lesson 9</div>
+            <div class="video-item" onclick="playVideo('v10.mp4', 'Lesson 10',this)">10. Lesson 10</div>
+
+            <div class="video-item" onclick="playVideo('v11.mp4', 'Lesson 11',this)">11. Lesson 11</div>
+            <div class="video-item" onclick="playVideo('v12.mp4', 'Lesson 12',this)">12. Lesson 12</div>
+            <div class="video-item" onclick="playVideo('v13.mp4', 'Lesson 13',this)">13. Lesson 13</div>
+            <div class="video-item" onclick="playVideo('v14.mp4', 'Lesson 14',this)">14. Lesson 14</div>
+            <div class="video-item" onclick="playVideo('v15.mp4', 'Lesson 15',this)">15. Lesson 15</div>
+
+            <div class="video-item" onclick="playVideo('v16.mp4', 'Lesson 16',this)">16. Lesson 16</div>
+            <div class="video-item" onclick="playVideo('v17.mp4', 'Lesson 17',this)">17. Lesson 17</div>
+            <div class="video-item" onclick="playVideo('v18.mp4', 'Lesson 18',this)">18. Lesson 18</div>
+            <div class="video-item" onclick="playVideo('v19.mp4', 'Lesson 19',this)">19. Lesson 19</div>
+            <div class="video-item" onclick="playVideo('v20.mp4', 'Lesson 20',this)">20. Lesson 20</div>
+
+            <div class="video-item" onclick="playVideo('v21.mp4', 'Lesson 21',this)">21. Lesson 21</div>
+            <div class="video-item" onclick="playVideo('v22.mp4', 'Lesson 22',this)">22. Lesson 22</div>
+            <div class="video-item" onclick="playVideo('v23.mp4', 'Lesson 23',this)">23. Lesson 23</div>
+            <div class="video-item" onclick="playVideo('v24.mp4', 'Lesson 24',this)">24. Lesson 24</div>
+            <div class="video-item" onclick="playVideo('v25.mp4', 'Lesson 25',this)">25. Lesson 25</div>
+
+            <div class="video-item" onclick="playVideo('v26.mp4', 'Lesson 26',this)">26. Lesson 26</div>
+            <div class="video-item" onclick="playVideo('v27.mp4', 'Lesson 27',this)">27. Lesson 27</div>
+            <div class="video-item" onclick="playVideo('v28.mp4', 'Lesson 28',this)">28. Lesson 28</div>
+            <div class="video-item" onclick="playVideo('v29.mp4', 'Lesson 29',this)">29. Lesson 29</div>
+            <div class="video-item" onclick="playVideo('v30.mp4', 'Lesson 30',this)">30. Lesson 30</div>
+
+            <div class="video-item" onclick="playVideo('v31.mp4', 'Lesson 31',this)">31. Lesson 31</div>
+            <div class="video-item" onclick="playVideo('v32.mp4', 'Lesson 32',this)">32. Lesson 32</div>
+            <div class="video-item" onclick="playVideo('v33.mp4', 'Lesson 33',this)">33. Lesson 33</div>
+
+        </div>
+
     </div>
 
-    <!-- 📃 PLAYLIST -->
-    <div class="playlist">
+</section>
 
-        <div class="video-item active" onclick="playVideo('https://youtu.be/cLR7gjug_ec','1. Introduction',this)">1. Introduction</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/9pIe0nxYx5w','2. Basics',this)">2. Basics</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/v8E2byIWFhs','3. Setup',this)">3. Setup</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/yMGyEg8F7UI','4. HTML Intro',this)">4. HTML Intro</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/rqcmeK26SkE','5. Tags',this)">5. Tags</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/bHN0NHUuGuM','6. Forms',this)">6. Forms</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/6BWmMLyFX4s','7. CSS Intro',this)">7. CSS Intro</div>
-        <div class="video-item" onclick="playVideo('https://youtu.be/vLnDrtQnzgo','8. Colors',this)">8. Colors</div>
-        <div class="video-item" onclick="playVideo('VIDEO9','9. Box Model',this)">9. Box Model</div>
-        <div class="video-item" onclick="playVideo('VIDEO10','10. Flexbox',this)">10. Flexbox</div>
+<script>
+function playVideo(src, title) {
+    const video = document.getElementById("mainVideo");
+    const titleText = document.getElementById("videoTitle");
 
-        <div class="video-item" onclick="playVideo('VIDEO11','11. Grid',this)">11. Grid</div>
-        <div class="video-item" onclick="playVideo('VIDEO12','12. Responsive',this)">12. Responsive</div>
-        <div class="video-item" onclick="playVideo('VIDEO13','13. JS Intro',this)">13. JS Intro</div>
-        <div class="video-item" onclick="playVideo('VIDEO14','14. Variables',this)">14. Variables</div>
-        <div class="video-item" onclick="playVideo('VIDEO15','15. Functions',this)">15. Functions</div>
+    video.src = src;
+    video.play();
+    titleText.innerText = title;
 
-        <div class="video-item" onclick="playVideo('VIDEO16','16. DOM',this)">16. DOM</div>
-        <div class="video-item" onclick="playVideo('VIDEO17','17. Events',this)">17. Events</div>
-        <div class="video-item" onclick="playVideo('VIDEO18','18. Projects',this)">18. Projects</div>
-        <div class="video-item" onclick="playVideo('VIDEO19','19. Hosting',this)">19. Hosting</div>
-        <div class="video-item" onclick="playVideo('VIDEO20','20. GitHub',this)">20. GitHub</div>
-
-        <div class="video-item" onclick="playVideo('VIDEO21','21. Deployment',this)">21. Deployment</div>
-        <div class="video-item" onclick="playVideo('VIDEO22','22. SEO Basics',this)">22. SEO Basics</div>
-        <div class="video-item" onclick="playVideo('VIDEO23','23. Optimization',this)">23. Optimization</div>
-        <div class="video-item" onclick="playVideo('VIDEO24','24. Animation',this)">24. Animation</div>
-        <div class="video-item" onclick="playVideo('VIDEO25','25. Advanced CSS',this)">25. Advanced CSS</div>
-
-        <div class="video-item" onclick="playVideo('VIDEO26','26. JS Advanced',this)">26. JS Advanced</div>
-        <div class="video-item" onclick="playVideo('VIDEO27','27. API',this)">27. API</div>
-        <div class="video-item" onclick="playVideo('VIDEO28','28. Final Project',this)">28. Final Project</div>
-        <div class="video-item" onclick="playVideo('VIDEO29','29. Interview Prep',this)">29. Interview Prep</div>
-        <div class="video-item" onclick="playVideo('VIDEO30','30. Conclusion',this)">30. Conclusion</div>
-
-    </div>
+    document.querySelectorAll(".video-item").forEach(v => v.classList.remove("active"));
+    event.target.classList.add("active");
+}
+</script>
 <script src="script.js"></script>
-</div>
+</body>
+</html>
