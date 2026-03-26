@@ -276,29 +276,33 @@ nav a.active {
     top: 0;
 
     width: 100%;
-    line-height: 1em;      /* 🔥 match heading */
-    font: inherit;         /* 🔥 same font as H1 */
+    line-height: 1em;
+    font: inherit;
 
     opacity: 0;
-    transform: translateY(30px) scale(0.9);
-    filter: blur(4px);
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
 
-    transition: all 0.5s ease;
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.8s ease;
 
-    color: inherit;        /* 🔥 remove weird color mismatch */
-    text-align: left;      /* 🔥 aligns with text */
+    color: inherit;
 }
 
+/* ACTIVE WORD */
 .word.active {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
 }
 
+/* EXIT WORD */
 .word.exit {
     opacity: 0;
-    transform: translateY(-30px) scale(0.9);
-    filter: blur(4px);
+    transform: translateY(-40px) scale(0.95);
+    filter: blur(8px);
 }
 
 .theme-toggle {
