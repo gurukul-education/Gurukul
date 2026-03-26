@@ -1,35 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Programming Course</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<div class="player-layout">
 
-<body>
-
-<!-- NAVBAR SAME AS YOUR SITE -->
-
-<section class="course-player">
-
-    <h1>Programming Course</h1>
-
-    <div class="course-content">
-
-        <!-- VIDEO -->
-        <div class="video-box">
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-            </video>
+    <!-- 🎬 MAIN VIDEO -->
+    <div class="video-section">
+        <div class="video-wrapper">
+            <iframe id="mainVideo"
+                src="https://www.youtube.com/embed/VIDEO1"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
         </div>
 
-        <!-- PDF -->
-        <div class="pdf-box">
-            <iframe src="notes.pdf"></iframe>
-        </div>
+        <h3 id="videoTitle">1. Introduction</h3>
+    </div>
+
+    <!-- 📃 PLAYLIST -->
+    <div class="playlist">
+
+        <div class="video-item active" onclick="playVideo('https://youtu.be/cLR7gjug_ec','1. Introduction',this)">1. Introduction</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/9pIe0nxYx5w','2. Basics',this)">2. Basics</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/v8E2byIWFhs','3. Setup',this)">3. Setup</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/yMGyEg8F7UI','4. HTML Intro',this)">4. HTML Intro</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/rqcmeK26SkE','5. Tags',this)">5. Tags</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/bHN0NHUuGuM','6. Forms',this)">6. Forms</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/6BWmMLyFX4s','7. CSS Intro',this)">7. CSS Intro</div>
+        <div class="video-item" onclick="playVideo('https://youtu.be/vLnDrtQnzgo','8. Colors',this)">8. Colors</div>
+        <div class="video-item" onclick="playVideo('VIDEO9','9. Box Model',this)">9. Box Model</div>
+        <div class="video-item" onclick="playVideo('VIDEO10','10. Flexbox',this)">10. Flexbox</div>
+
+        <div class="video-item" onclick="playVideo('VIDEO11','11. Grid',this)">11. Grid</div>
+        <div class="video-item" onclick="playVideo('VIDEO12','12. Responsive',this)">12. Responsive</div>
+        <div class="video-item" onclick="playVideo('VIDEO13','13. JS Intro',this)">13. JS Intro</div>
+        <div class="video-item" onclick="playVideo('VIDEO14','14. Variables',this)">14. Variables</div>
+        <div class="video-item" onclick="playVideo('VIDEO15','15. Functions',this)">15. Functions</div>
+
+        <div class="video-item" onclick="playVideo('VIDEO16','16. DOM',this)">16. DOM</div>
+        <div class="video-item" onclick="playVideo('VIDEO17','17. Events',this)">17. Events</div>
+        <div class="video-item" onclick="playVideo('VIDEO18','18. Projects',this)">18. Projects</div>
+        <div class="video-item" onclick="playVideo('VIDEO19','19. Hosting',this)">19. Hosting</div>
+        <div class="video-item" onclick="playVideo('VIDEO20','20. GitHub',this)">20. GitHub</div>
+
+        <div class="video-item" onclick="playVideo('VIDEO21','21. Deployment',this)">21. Deployment</div>
+        <div class="video-item" onclick="playVideo('VIDEO22','22. SEO Basics',this)">22. SEO Basics</div>
+        <div class="video-item" onclick="playVideo('VIDEO23','23. Optimization',this)">23. Optimization</div>
+        <div class="video-item" onclick="playVideo('VIDEO24','24. Animation',this)">24. Animation</div>
+        <div class="video-item" onclick="playVideo('VIDEO25','25. Advanced CSS',this)">25. Advanced CSS</div>
+
+        <div class="video-item" onclick="playVideo('VIDEO26','26. JS Advanced',this)">26. JS Advanced</div>
+        <div class="video-item" onclick="playVideo('VIDEO27','27. API',this)">27. API</div>
+        <div class="video-item" onclick="playVideo('VIDEO28','28. Final Project',this)">28. Final Project</div>
+        <div class="video-item" onclick="playVideo('VIDEO29','29. Interview Prep',this)">29. Interview Prep</div>
+        <div class="video-item" onclick="playVideo('VIDEO30','30. Conclusion',this)">30. Conclusion</div>
 
     </div>
 
-</section>
-
-</body>
-</html>
+</div>
