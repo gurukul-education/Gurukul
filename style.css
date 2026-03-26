@@ -1,0 +1,615 @@
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+.top-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.top-logos img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    padding: 8px;
+    transition: all 0.35s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.top-logos img:hover {
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3),
+                0 0 10px rgba(255,255,255,0.6);
+}
+/* Make hero container */
+.hero {
+    position: relative;
+}
+
+/* Logo placement */
+.hero-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Logo styling */
+.hero-logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+}
+
+/* 🔥 PRO BUBBLY HOVER */
+.hero-logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.hero-logo img:hover {
+    opacity: 0.9;
+}
+
+/* Navbar styling */
+/* ===== FIX NAVBAR ===== */
+
+header {
+    background: #0d1b2a;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* LOGO */
+.nav-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* LINKS CONTAINER */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* LINKS STYLE */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* ✨ CLEAN HOVER EFFECT */
+.nav-links a:hover {
+    background: #6ea2b3;
+    color: white;
+
+    transform: translateY(-3px) scale(1.05);  /* 🔥 bouncy effect */
+    box-shadow: 0 6px 15px rgba(110, 162, 179, 0.5);
+}
+
+/* 👇 CLICK EFFECT */
+.nav-links a:active {
+    transform: scale(0.95);
+}
+
+  
+/* ===== COURSES SECTION ===== */
+.courses {
+  padding: 50px 20px;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+/* Title */
+.course-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grid Layout */
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Card */
+.course-box {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+/* Image FIX (MOST IMPORTANT) */
+.course-box img {
+  width: 100%;
+  height: 180px;        /* 🔥 fixed height */
+  object-fit: cover;    /* 🔥 prevents stretching */
+  display: block;
+}
+
+/* Content */
+.course-content {
+  padding: 15px;
+}
+
+.course-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.course-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Hover */
+.course-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(110, 162, 179, 0.6);
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .course-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-title {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 12px 30px;
+  margin: 20px auto;
+
+  color: white;
+  background: linear-gradient(135deg, #6ea2b3, #5a8fa1);
+
+  border-radius: 40px;
+  letter-spacing: 1px;
+
+  box-shadow: 0 6px 15px rgba(110, 162, 179, 0.5);
+
+  transition: all 0.3s ease;
+}
+
+
+nav a.active {
+    background: linear-gradient(135deg, #6ea2b3, #5a8fa1);
+    color: white;
+}
+
+/* Make full box behave like button */
+.course-box {
+  display: block;
+  text-decoration: none;   /* remove underline */
+  color: black;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;        /* 🔥 shows hand cursor */
+}
+
+/* Image */
+.course-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Title */
+.course-box h3 {
+  margin: 10px 0 5px;
+}
+
+/* Description */
+.course-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Hover effect */
+.course-box:hover {
+  transform: scale(1.05);
+  background: #e0f7fa;
+}
+
+.main-heading {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.text-animate {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+     vertical-align: baseline;
+    height: .95em;
+    min-width: 150px;
+    overflow: hidden;
+}
+
+.word {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    line-height: 1em;      /* 🔥 match heading */
+    font: inherit;         /* 🔥 same font as H1 */
+
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(4px);
+
+    transition: all 0.5s ease;
+
+    color: inherit;        /* 🔥 remove weird color mismatch */
+    text-align: left;      /* 🔥 aligns with text */
+}
+
+.word.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+.word.exit {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+    filter: blur(4px);
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;   /* 🔥 makes it circular */
+
+    border: none;
+    cursor: pointer;
+
+    /* 🔥 glass / foggy look */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 20px rgba(255,255,255,0.3);
+    z-index: 9999;
+
+    transition: all 0.3s ease;
+}
+
+/* 🌙 DARK THEME */
+body.dark-mode {
+    background: #0d1b2a;
+    color: white;
+}
+
+/* Header */
+body.dark-mode header {
+    background: #0d1b2a;
+}
+
+/* Navbar */
+body.dark-mode nav {
+    background: #1b263b;
+}
+
+/* Sections */
+body.dark-mode section {
+    background: #111;
+    color: white;
+}
+
+/* Cards */
+body.dark-mode .course-box {
+    background: #1e1e1e;
+    color: white;
+}
+
+/* Hero text */
+body.dark-mode .hero {
+    color: white;
+}
+
+/* 🌙 DARK MODE TEXT FIX */
+
+/* General text */
+body.dark-mode {
+    color: #e0e1dd;   /* soft white (not harsh) */
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #ffffff;
+}
+
+/* Paragraphs */
+body.dark-mode p {
+    color: #cbd5e1;
+}
+
+/* Navbar links */
+body.dark-mode nav a {
+    color: #e0e1dd;
+}
+
+/* Course cards text */
+body.dark-mode .course-box h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .course-box p {
+    color: #b0b0b0;
+}
+
+/* Section titles like "Library Facilities" */
+body.dark-mode section h2 {
+    color: #ffffff;
+}
+
+/* Footer */
+body.dark-mode footer {
+    color: #e0e1dd;
+}
+/* Fix Library Facilities section in dark mode */
+body.dark-mode section[style*="background:#e0e1dd"] {
+    background: #1b263b !important;  /* dark background */
+    color: #e0e1dd;
+}
+
+/* Text inside it */
+body.dark-mode section[style*="background:#e0e1dd"] p,
+body.dark-mode section[style*="background:#e0e1dd"] h2 {
+    color: #ffffff;
+}
+
+/* ===== NAVBAR CLEAN FIX ===== */
+.navbar {
+    width: 100%;                 /* 🔥 FULL WIDTH */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     
+    /* 🌞 LIGHT MODE NAVBAR */
+
+    background: #9babab;
+    overflow: hidden;
+    padding: 10px 15px;
+
+    box-sizing: border-box;  
+    gap: 10px;    /* 🔥 VERY IMPORTANT */
+}
+
+/* LOGO */
+.nav-logo {
+    margin-right: 25px; /* 🔥 SPACE BETWEEN LOGO & HOME */
+}
+
+.nav-logo img {
+    width: 65px;   /* slightly bigger */
+    height: 65px;
+    border-radius: 50%;
+}
+
+/* LINKS CONTAINER */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex: 1;                 /* 🔥 takes middle space */
+    justify-content: center;
+}
+/* LINKS */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* MAKE HOME LOOK SPECIAL */
+.nav-links a:first-child {
+    background: #6ea2b3;
+    font-weight: bold;
+}
+
+/* HOVER */
+.nav-links a:hover {
+    background: #6ea2b3;
+}
+
+/* 🔍 SEARCH BAR */
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Input */
+.nav-search input {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 80px;
+
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    color: white;
+}
+
+/* Placeholder color */
+.nav-search input::placeholder {
+    color: #ddd;
+}
+
+/* Button */
+
+.nav-search button {
+    padding: 6px 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    background: #6ea2b3;
+    color: white;
+
+    transition: 0.3s;
+}
+
+.nav-search button:hover {
+    transform: scale(1.1);
+}
+
+/* LAYOUT */
+.player-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+
+/* VIDEO */
+.video-wrapper {
+    position: relative;
+    
+
+}
+
+.video-wrapper video {
+    width: 100%;
+    border-radius: 12px;
+
+    position: relative;
+    z-index: 5;   /* 🔥 bring video to front */
+}
+
+/* LOGO ON VIDEO */
+
+.video-logo {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    pointer-events: none;   /* 🔥 MUST */
+    z-index: 6;
+}
+/* PLAYLIST */
+.playlist {
+    max-height: 500px;
+    overflow-y: auto;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* VIDEO ITEM */
+.video-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.video-item:hover {
+    background: #6ea2b3;
+    color: white;
+}
+
+/* ACTIVE */
+.video-item.active {
+    background: #6ea2b3;
+    color: white;
+}
+
+/* TITLE */
+#videoTitle {
+    margin-top: 10px;
+}
+
+.video-controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.video-controls button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #3c4255;
+    color: white;
+    transition: 0.3s;
+}
+
+.video-controls button:hover {
+    transform: scale(1.1);
+}
