@@ -66,31 +66,31 @@ function toggleFullscreen() {
 const glow = document.querySelector(".cursor-glow");
 
 /* 🖱️ MOUSE MOVE (Desktop) */
+document.addEventListener("DOMContentLoaded", () => {
+
+const glow = document.querySelector(".cursor-glow");
+
+if (!glow) return; // 🔥 prevents error
+
 document.addEventListener("mousemove", (e) => {
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
 });
 
-/* 📱 TOUCH MOVE (Mobile) */
 document.addEventListener("touchmove", (e) => {
     const touch = e.touches[0];
     glow.style.left = touch.clientX + "px";
     glow.style.top = touch.clientY + "px";
 });
 
-/* 👆 TOUCH START (tap) */
 document.addEventListener("touchstart", (e) => {
     const touch = e.touches[0];
     glow.style.left = touch.clientX + "px";
     glow.style.top = touch.clientY + "px";
 });
 
-
-document.addEventListener("click", () => {
-    glow.style.transform = "translate(-50%, -50%) scale(1.5)";
-    
-    setTimeout(() => {
-        glow.style.transform = "translate(-50%, -50%) scale(1)";
-    }, 200);
 });
+
+
+
 
