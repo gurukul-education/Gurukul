@@ -64,16 +64,5 @@ function toggleFullscreen() {
 }
 
 
-<script>
-window.addEventListener("scroll", function() {
-    const parallax = document.querySelectorAll(".parallax");
 
-    parallax.forEach(bg => {
-        let speed = 0.5;
-        let offset = window.pageYOffset;
-
-        bg.style.backgroundPositionY = offset * speed + "px";
-    });
-});
-</script>
 
