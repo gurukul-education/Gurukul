@@ -735,8 +735,12 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
     border-radius: 50%;
     pointer-events: none;
 
-    background: radial-gradient(circle, rgba(0,198,255,0.6) 0%, rgba(0,114,255,0.2) 40%, transparent 70%);
-    
+   background: radial-gradient(circle,
+    rgba(110,162,179,0.6) 0%,
+    rgba(0,198,255,0.5) 30%,
+    rgba(0,114,255,0.3) 60%,
+    transparent 80%
+);
     transform: translate(-50%, -50%);
     z-index: 9999;
 
