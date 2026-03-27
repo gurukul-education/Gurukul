@@ -48,13 +48,13 @@ function playVideo(src, title, el) {
 
 // 🔳 FULLSCREEN (works with iframe)
 function toggleFullscreen() {
-    const video = document.getElementById("mainVideo");
+    const wrapper = document.querySelector(".video-wrapper"); // 🔥 changed
 
     if (!document.fullscreenElement) {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
+        if (wrapper.requestFullscreen) {
+            wrapper.requestFullscreen();
+        } else if (wrapper.webkitRequestFullscreen) {
+            wrapper.webkitRequestFullscreen();
         }
     } else {
         if (document.exitFullscreen) {
@@ -62,5 +62,4 @@ function toggleFullscreen() {
         }
     }
 }
-
 
