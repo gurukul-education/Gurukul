@@ -258,11 +258,11 @@ nav a.active {
 .text-animate {
     position: relative;
     display: inline-block;
-    height: 60px;
+    height: auto;
      vertical-align: baseline;
-    height: .95em;
+ 
     min-width: 150px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .word {
