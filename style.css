@@ -723,3 +723,8 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
         overflow-x: hidden;
     }
 }
+
+.fix-text-cut {
+    line-height: 1.3;
+    overflow: visible;
+}
