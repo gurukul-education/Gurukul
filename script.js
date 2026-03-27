@@ -32,21 +32,19 @@ function toggleTheme() {
     }
 }
 
-// 🎬 PLAY YOUTUBE VIDEO
-function playVideo(id, title, element) {
-    const iframe = document.getElementById("mainVideo");
+// 🎬 PLAY cloudinary VIDEO
 
-    // change video
-    iframe.src = "https://www.youtube.com/embed/" + id;
+function playVideo(src, title, el) {
+    const video = document.getElementById("mainVideo");
+    const titleText = document.getElementById("videoTitle");
 
-    // change title
-    document.getElementById("videoTitle").innerText = title;
+    video.src = src;
+    video.play();
+    titleText.innerText = title;
 
-    // active class
     document.querySelectorAll(".video-item").forEach(v => v.classList.remove("active"));
-    element.classList.add("active");
+    el.classList.add("active");
 }
-
 
 // 🔳 FULLSCREEN (works with iframe)
 function toggleFullscreen() {
