@@ -86,5 +86,11 @@ document.addEventListener("touchstart", (e) => {
 });
 
 
-
+document.addEventListener("click", () => {
+    glow.style.transform = "translate(-50%, -50%) scale(1.5)";
+    
+    setTimeout(() => {
+        glow.style.transform = "translate(-50%, -50%) scale(1)";
+    }, 200);
+});
 
