@@ -98,42 +98,23 @@ nav {
     color: white;
     text-decoration: none;
     padding: 8px 18px;
-    border-radius: 0px;
+    border-radius: 20px;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #6ea2b3;
-    transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
 /* ✨ CLEAN HOVER EFFECT */
+.nav-links a:hover {
+    background: #6ea2b3;
+    color: white;
+
+    transform: translateY(-3px) scale(1.05);  /* 🔥 bouncy effect */
+    box-shadow: 0 6px 15px rgba(110, 162, 179, 0.5);
+}
 
 /* 👇 CLICK EFFECT */
 .nav-links a:active {
     transform: scale(0.95);
-}
-
-.nav-links a:last-child {
-    background: #6ea2b3;
-    padding: 8px 18px;
-    border-radius: 6px;
-}
-
-/* REMOVE underline from Admission */
-.nav-links a:last-child::after {
-    display: none;
 }
 
   
