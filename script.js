@@ -108,10 +108,7 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
 
   const passkey = document.getElementById("passkey").value;
 
-  if(passkey !== "GURUKUL123") {
-    alert("Wrong Passkey!");
-    return;
-  }
+
 
   // SUCCESS → REDIRECT
   window.location.href = "admission.html";
@@ -152,19 +149,7 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
     let course = document.getElementById("courseInput").value;
     let passkey = document.getElementById("passkey").value;
 
-    // VALIDATION
-    if (!name || !phone || !course) {
-        alert("Please fill all details");
-        return;
-    }
-    console.log("Entered:", passkey);
-    // PASSKEY CHECK
-    const correctPasskey = "36249"; // <-- change this
-
-    if (passkey !== correctPasskey) {
-        alert("Wrong Passkey ❌");
-        return;
-    }
+   
 
     // SUCCESS
     redirectToCourse(course);
@@ -241,11 +226,8 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         return;
     }
 
-    // 🔹 PASSKEY CHECK
-    const correctPasskey = "36249"; // your passkey
-
     if (passkey !== correctPasskey) {
-        alert("❌ Wrong Passkey");
+        alert("Wrong Passkey ❌");
         return;
 
     }
