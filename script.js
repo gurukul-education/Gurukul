@@ -275,6 +275,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         // 🔹 SEND DATA TO GOOGLE SHEET
       await fetch("https://script.google.com/macros/s/AKfycbzvrtCIHwUzYclvzcEm-kgofgrx_F2wiVvrhPbvv98LaBWEKSe3xELrFBUz6_gpR2DU/exec", {
     method: "POST",
+          mode: "no-cors",
     headers: {
         "Content-Type": "application/json"
     },
