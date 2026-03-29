@@ -655,25 +655,9 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
 
 /* TOP RIGHT (share button) */
 /* TOP RIGHT (Share button cover) */
-.overlay-top-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 140px;
-    height: 90px;
-    z-index: 9999;
-    background: black; /* match video background */
-}
-
-/* BOTTOM RIGHT (YouTube logo cover) */
+.overlay-top-right,
 .overlay-bottom-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 160px;
-    height: 80px;
-    z-index: 9999;
-    background: black;
+    pointer-events: none;  /* 🔥 THIS FIXES EVERYTHING */
 }
 
 
@@ -741,4 +725,315 @@ body.dark-mode section[style*="background:#e0e1dd"] h2 {
 header, nav, section, .hero, .course-box {
     position: relative;
     z-index: 2;
+}
+
+/* POPUP BACKGROUND */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+/* POPUP BOX */
+.popup-box {
+  width: 350px;
+  padding: 25px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+
+  color: white;
+  position: relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* FORM */
+.popup-box input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+/* FILE LABEL */
+.popup-box label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* BUTTON */
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #0d1b2a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-box button:hover {
+  background: #6ea2b3;
+}
+#admissionForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#admissionForm button {
+  grid-column: span 2;
+}
+
+/* GRID CLEAN FIX */
+#admissionForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* increase for clean spacing */
+}
+/* EACH FIELD SAME SIZE */
+#admissionForm input {
+  width: 80%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 8px;
+  color: white;
+}
+
+/* FILE INPUT FIX */
+#admissionForm input[type="file"] {
+  border: none;
+}
+
+/* SUBMIT BUTTON FULL WIDTH */
+#admissionForm button {
+  grid-column: span 2;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #0d1b2a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+.popup-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FIX INPUT SPACING */
+#admissionForm input {
+  height: 35px;              /* same height for all */
+  line-height: 35px;
+}
+
+/* REMOVE EXTRA SPACE FROM TEXT INPUTS */
+#admissionForm input[type="text"],
+#admissionForm input[type="email"],
+#admissionForm input[type="number"],
+#admissionForm input[type="password"] {
+  padding: 5px 0;            /* reduce vertical gap */
+}
+
+/* FILE INPUT ALIGN FIX */
+/* SAME WIDTH FOR ALL */
+#admissionForm input,
+.file-box label {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* HIDE DEFAULT FILE BUTTON */
+.file-box input[type="file"] {
+  display: none;
+}
+
+/* CUSTOM FILE BOX */
+.file-box label {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.file-box label:hover {
+  opacity: 1;
+}
+
+/* WHEN FILE SELECTED */
+.file-box input[type="file"]:valid + label {
+  color: #6ea2b3;
+}
+#admissionForm input {
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    padding: 8px 0;
+    color: white;
+}
+
+/* MAKE ALL FIELDS EXACT SAME WIDTH */
+#admissionForm input,
+.file-box {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* FIX LABEL (FILE BOX) PERFECT ALIGN */
+.file-box label {
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 2px solid white;
+}
+
+/* REMOVE EXTRA SPACE DIFFERENCE */
+#admissionForm input {
+    padding: 8px 0;
+    margin: 0;
+}
+
+/* FORCE GRID ITEMS SAME SIZE */
+#admissionForm > * {
+    width: 100%;
+}
+
+
+/* COURSE SELECT WRAPPER */
+.course-box-select {
+    position: relative;
+    width: 100%;
+}
+
+/* INPUT STYLE (same as others) */
+#courseInput {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 8px 0;
+    color: white;
+    cursor: pointer;
+}
+
+/* DROPDOWN (UPWARDS + CLEAN) */
+.course-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 40px;          /* 🔥 opens UP */
+    left: 0;
+    width: 100%;
+
+    padding: 5px 0;
+
+    background: transparent;   /* ❌ remove box background */
+}
+
+/* SHOW */
+.course-dropdown.active {
+    display: block;
+}
+
+/* ITEMS (MINIMAL STYLE) */
+.course-dropdown div {
+    padding: 6px 0;
+    color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT (MODERN) */
+.course-dropdown div:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+/* MODERN SCROLLBAR */
+.course-dropdown::-webkit-scrollbar {
+    width: 5px;
+}
+
+.course-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.course-dropdown::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.2)
+    );
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* HOVER EFFECT */
+.course-dropdown {
+    display: none;
+    position: absolute;
+
+    bottom: 50px;   /* open upward properly */
+    left: 0;
+    width: 100%;
+
+    max-height: 160px;   /* control height */
+    overflow-y: auto;    /* enable vertical scroll ONLY */
+    overflow-x: hidden;
+
+    padding: 10px;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(15px);
+
+    border-radius: 12px;
+}
+
+.fullscreen-btn {
+    margin-top: 12px;
+    padding: 10px 18px;
+    border: 2px solid #6ea2b3;
+    background: transparent;
+    color: #6ea2b3;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.fullscreen-btn:hover {
+    background: #6ea2b3;
+    color: white;
+    transform: scale(1.05);
 }
