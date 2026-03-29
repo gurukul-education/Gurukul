@@ -254,8 +254,8 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         let photoURL = await uploadFile(photo);
         let twelfthURL = await uploadFile(twelfth);
 
-        // 🔹 SEND DATA TO GOOGLE SHEET
-     await fetch("https://script.google.com/macros/s/AKfycbzvrtCIHwUzYclvzcEm-kgofgrx_F2wiVvrhPbvv98LaBWEKSe3xELrFBUz6_gpR2DU/exec", {
+        // 🔹 SEND DATA TO GOOGLE SHEET 
+     await fetch("https://script.google.com/macros/s/AKfycbzxfCtCn1xa7UReqIAZb9un0GCd8XVwIuOWJrD9oxz9W1JdwtKpaEdYEw8SKFL-52ZG/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
