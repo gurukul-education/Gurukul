@@ -96,7 +96,7 @@ footer {
             <a href="courses.html">Courses</a>
             <a href="library.html">Library</a>
             <a href="contact.html">Contact</a>
-            <a href="admission.html">Admission</a>
+            <a href="#" onclick="openPopup()">Admission</a>
         </div>
 
         <!-- 🔍 SEARCH BAR -->
@@ -216,10 +216,79 @@ footer {
     <p>📍 Court Road, Above Shaina Caffe, 1st Floor, Sangaria</p>
     <p>📞 9352707627</p>
 </footer>
-<div class="cursor-glow"></div>
+
+<!-- ADMISSION POPUP -->
+<div id="admissionPopup" class="popup">
+  <div class="popup-box">
+
+    <!-- CLOSE BUTTON -->
+    <span class="close-btn" onclick="closePopup()">✖</span>
+
+    <h2>Admission</h2>
+
+    <form id="admissionForm">
+
+    
+<input type="text" id="studentName" placeholder="Student Name" required>
+<input type="text" id="phone" placeholder="Phone Number" required>
+
+
+<div class="course-box-select">
+    <input type="text" id="courseInput" placeholder="Select Course" readonly onclick="openCourses()">
+    
+    <div class="course-dropdown" id="courseDropdown">
+        <div onclick="selectCourse('DIGITAL MARKETING')">DIGITAL MARKETING</div>
+        <div onclick="selectCourse('PYTHON')">PYTHON</div>
+        <div onclick="selectCourse('C++')">C++</div>
+        <div onclick="selectCourse('WEB DEVELOPMENT')">WEB DEVELOPMENT</div>
+        <div onclick="selectCourse('BASIC COMPUTER')">BASIC COMPUTER</div>
+        <div onclick="selectCourse('OFFICE MANAGMENT')">OFFICE MANAGMENT</div>
+        <div onclick="selectCourse('OFFICE MANAGMENT HINDI')">OFFICE MANAGMENT HINDI</div>
+        <div onclick="selectCourse('ADVANCE OFFICE MANAGMENT')">ADVANCE OFFICE MANAGMENT</div>
+        <div onclick="selectCourse('TALLY')">TALLY</div>
+        <div onclick="selectCourse('ENGLISH TYPING')">ENGLISH TYPING</div>
+        <div onclick="selectCourse('HINDI TYPING')">HINDI TYPING</div>
+        <div onclick="selectCourse('CCC')">CCC</div>
+        <div onclick="selectCourse('PGDCA')">PGDCA</div>
+        <div onclick="selectCourse('NIOS 10th/12th')">NIOS 10th/12th</div>
+          <div onclick="selectCourse('BASIC GRAPHIC DESIGNING')">BASIC GRAPHIC DESIGNING</div>
+        <div onclick="selectCourse('PROFESSIONAL GRAPHIC DESIGNING')">PROFESSIONAL GRAPHIC DESIGNING</div>
+        <div onclick="selectCourse('RS-CIT PRACTICE')">RS-CIT PRACTICE</div>
+        <div onclick="selectCourse('ACCOUNTS')">ACCOUNTS</div>
+    </div>
+</div>
+
+<div class="file-box">
+  <input type="file" id="aadhar" required>
+  <label for="aadhar">Aadhar Card</label>
+</div>
+
+
+<div class="file-box">
+  <input type="file" id="tenth" required>
+  <label for="tenth">10th Marksheet</label>
+</div>
+
+<div class="file-box">
+  <input type="file" id="photo" required>
+  <label for="photo">Photo</label>
+</div>
+
+<div class="file-box">
+  <input type="file" id="twelfth" required>
+  <label for="twelfth">12th Marksheet</label>
+</div>
+
+<input type="password" id="passkey" placeholder="Enter Passkey">
+     <button type="submit">Submit</button>
+     
+</form>
+  </div>
+</div>
+
+
 <script src="script.js"></script>
    
 </body>
 </html>
-
 
