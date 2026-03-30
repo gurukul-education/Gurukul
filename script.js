@@ -234,7 +234,6 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         // 🔹 SEND DATA TO GOOGLE SHEET
       await fetch("https://script.google.com/macros/s/AKfycbxVI3ANcCRwmuu_potKTmNsXCe9kIYOqC63rJHOkOThjxyY-96n1Q1vwUwWKdUMhh-phg/exec", {
     method: "POST",
-          mode: "no-cors",
     body: JSON.stringify({
         name: name,
         phone: phone,
@@ -244,11 +243,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         photo: photoURL,
         twelfth: twelfthURL
     })
-});
-
-        // 🔹 SUCCESS
-        alert("✅ Admission Submitted Successfully!");
-
+}); 
         redirectToCourse(course);
 
     } catch (error) {
