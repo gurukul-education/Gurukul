@@ -140,22 +140,43 @@ document.addEventListener("click", function(e) {
 
 
 
+
+
+function goFullscreen() {
+    const video = document.getElementById("mainVideo");
+
+    if (!document.fullscreenElement) {
+        video.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+
+
 document.getElementById("admissionForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // GET VALUES
-    let name = document.getElementById("studentName").value;
-    let phone = document.getElementById("phone").value;
+    // 🔹 GET VALUES
     let course = document.getElementById("courseInput").value;
     let passkey = document.getElementById("passkey").value;
 
-   
+    // 🔐 DEFINE PASSKEY
+    const correctPasskey = "1234"; // 👉 change this
 
-    // SUCCESS
-    redirectToCourse(course);
-});
+    // ❌ WRONG PASSKEY
+    if (passkey !== correctPasskey) {
+        alert("❌ Wrong Passkey");
+        return;
+    }
 
-function redirectToCourse(course) {
+    // ❌ NO COURSE SELECTED
+    if (!course) {
+        alert("⚠️ Please select course");
+        return;
+    }
+
+    // ✅ REDIRECT BASED ON COURSE
     let page = "";
 
     switch(course) {
@@ -180,105 +201,10 @@ function redirectToCourse(course) {
             break;
 
         default:
-            page = "admission.html";
+            alert("⚠️ Invalid course");
+            return;
     }
 
+    // 🚀 REDIRECT
     window.location.href = page;
-}
-
-function goFullscreen() {
-    const video = document.getElementById("mainVideo");
-
-    if (!document.fullscreenElement) {
-        video.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-}
-
-function goFullscreen() {
-    const video = document.getElementById("mainVideo");
-
-    if (!document.fullscreenElement) {
-        video.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-}
-
-document.getElementById("admissionForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    // 🔹 GET VALUES
-    let name = document.getElementById("studentName").value;
-    let phone = document.getElementById("phone").value;
-    let course = document.getElementById("courseInput").value;
-    let passkey = document.getElementById("passkey").value;
-
-    let aadhar = document.getElementById("aadhar").files[0];
-    let tenth = document.getElementById("tenth").files[0];
-    let photo = document.getElementById("photo").files[0];
-    let twelfth = document.getElementById("twelfth").files[0];
-
-    // 🔹 VALIDATION
-    if (!name || !phone || !course || !aadhar || !tenth || !photo || !twelfth || !passkey) {
-        alert("⚠️ Please fill all details");
-        return;
-    }
-
-    if (passkey !== correctPasskey) {
-        alert("Wrong Passkey ❌");
-        return;
-
-    }
-
-    // 🔥 CLOUDINARY UPLOAD FUNCTION
-    async function uploadFile(file) {
-        let formData = new FormData();
-        formData.append("file", file);
-        formData.append("upload_preset", "student_upload"); // 🔁 change this
-
-        let res = await fetch("https://api.cloudinary.com/v1_1/dr1wbu1og/upload", {
-            method: "POST",
-            body: formData
-        });
-
-        let data = await res.json();
-        return data.secure_url;
-    }
-
-    try {
-        // 🔹 UPLOAD FILES
-        let aadharURL = await uploadFile(aadhar);
-        let tenthURL = await uploadFile(tenth);
-        let photoURL = await uploadFile(photo);
-        let twelfthURL = await uploadFile(twelfth);
-
-        // 🔹 SEND DATA TO GOOGLE SHEET 
-     await fetch("https://script.google.com/macros/s/AKfycbzxfCtCn1xa7UReqIAZb9un0GCd8XVwIuOWJrD9oxz9W1JdwtKpaEdYEw8SKFL-52ZG/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: new URLSearchParams({
-        name: name,
-        phone: phone,
-        course: course,
-        aadhar: aadharURL,
-        tenth: tenthURL,
-        twelfth: twelfthURL,
-        photo: photoURL
-    })
-});
-
-        // 🔹 SUCCESS
-        alert("✅ Admission Submitted Successfully!");
-
-        redirectToCourse(course);
-
-    } catch (error) {
-        console.error(error);
-        alert("❌ Upload Failed. Try again.");
-    }
 });
