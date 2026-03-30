@@ -244,6 +244,9 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         twelfth: twelfthURL
     })
 }); 
+           // 🔹 SUCCESS
+        alert("✅ Admission Submitted Successfully!");
+
         redirectToCourse(course);
 
     } catch (error) {
