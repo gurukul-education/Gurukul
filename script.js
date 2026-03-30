@@ -102,17 +102,8 @@ function closePopup() {
 }
 
 
+
 /* FORM SUBMIT */
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const passkey = document.getElementById("passkey").value;
-
-
-
-  // SUCCESS → REDIRECT
-  window.location.href = "admission.html";
-});
 
 document.querySelectorAll('.file-box input').forEach(input => {
   input.addEventListener('change', function () {
