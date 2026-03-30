@@ -108,7 +108,10 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
 
   const passkey = document.getElementById("passkey").value;
 
-
+  if(passkey !== "GURUKUL123") {
+    alert("Wrong Passkey!");
+    return;
+  }
 
   // SUCCESS → REDIRECT
   window.location.href = "admission.html";
@@ -149,7 +152,19 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
     let course = document.getElementById("courseInput").value;
     let passkey = document.getElementById("passkey").value;
 
-   
+    // VALIDATION
+    if (!name || !phone || !course) {
+        alert("Please fill all details");
+        return;
+    }
+    console.log("Entered:", passkey);
+    // PASSKEY CHECK
+    const correctPasskey = "36249"; // <-- change this
+
+    if (passkey !== correctPasskey) {
+        alert("Wrong Passkey ❌");
+        return;
+    }
 
     // SUCCESS
     redirectToCourse(course);
@@ -226,8 +241,11 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         return;
     }
 
+    // 🔹 PASSKEY CHECK
+    const correctPasskey = "36249"; // your passkey
+
     if (passkey !== correctPasskey) {
-        alert("Wrong Passkey ❌");
+        alert("❌ Wrong Passkey");
         return;
 
     }
@@ -254,21 +272,21 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         let photoURL = await uploadFile(photo);
         let twelfthURL = await uploadFile(twelfth);
 
-        // 🔹 SEND DATA TO GOOGLE SHEET 
-     await fetch("https://script.google.com/macros/s/AKfycbzxfCtCn1xa7UReqIAZb9un0GCd8XVwIuOWJrD9oxz9W1JdwtKpaEdYEw8SKFL-52ZG/exec", {
+        // 🔹 SEND DATA TO GOOGLE SHEET
+      await fetch("https://script.google.com/macros/s/AKfycbzvrtCIHwUzYclvzcEm-kgofgrx_F2wiVvrhPbvv98LaBWEKSe3xELrFBUz6_gpR2DU/exec", {
     method: "POST",
-    mode: "no-cors",
+          mode: "no-cors",
     headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/json"
     },
-    body: new URLSearchParams({
+    body: JSON.stringify({
         name: name,
         phone: phone,
         course: course,
         aadhar: aadharURL,
         tenth: tenthURL,
-        twelfth: twelfthURL,
-        photo: photoURL
+        photo: photoURL,
+        twelfth: twelfthURL
     })
 });
 
