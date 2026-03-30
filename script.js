@@ -102,7 +102,17 @@ function closePopup() {
 }
 
 
+/* FORM SUBMIT */
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  const passkey = document.getElementById("passkey").value;
+
+
+
+  // SUCCESS → REDIRECT
+  window.location.href = "admission.html";
+});
 
 document.querySelectorAll('.file-box input').forEach(input => {
   input.addEventListener('change', function () {
@@ -128,6 +138,22 @@ document.addEventListener("click", function(e) {
     }
 });
 
+
+
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // GET VALUES
+    let name = document.getElementById("studentName").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("courseInput").value;
+    let passkey = document.getElementById("passkey").value;
+
+   
+
+    // SUCCESS
+    redirectToCourse(course);
+});
 
 function redirectToCourse(course) {
     let page = "";
@@ -180,28 +206,79 @@ function goFullscreen() {
     }
 }
 
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
+document.getElementById("admissionForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    const data = {
-        name: document.querySelector("input[name='name']").value,
-        phone: document.querySelector("input[name='phone']").value,
-        course: document.getElementById("courseInput").value,
-         };
+    // 🔹 GET VALUES
+    let name = document.getElementById("studentName").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("courseInput").value;
+    let passkey = document.getElementById("passkey").value;
 
-    fetch("https://script.google.com/macros/s/AKfycbxVI3ANcCRwmuu_potKTmNsXCe9kIYOqC63rJHOkOThjxyY-96n1Q1vwUwWKdUMhh-phg/exec", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-     }
+    let aadhar = document.getElementById("aadhar").files[0];
+    let tenth = document.getElementById("tenth").files[0];
+    let photo = document.getElementById("photo").files[0];
+    let twelfth = document.getElementById("twelfth").files[0];
+
+    // 🔹 VALIDATION
+    if (!name || !phone || !course || !aadhar || !tenth || !photo || !twelfth || !passkey) {
+        alert("⚠️ Please fill all details");
+        return;
+    }
+
+    if (passkey !== correctPasskey) {
+        alert("Wrong Passkey ❌");
+        return;
+
+    }
+
+    // 🔥 CLOUDINARY UPLOAD FUNCTION
+    async function uploadFile(file) {
+        let formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "student_upload"); // 🔁 change this
+
+        let res = await fetch("https://api.cloudinary.com/v1_1/dr1wbu1og/upload", {
+            method: "POST",
+            body: formData
+        });
+
+        let data = await res.json();
+        return data.secure_url;
+    }
+
+    try {
+        // 🔹 UPLOAD FILES
+        let aadharURL = await uploadFile(aadhar);
+        let tenthURL = await uploadFile(tenth);
+        let photoURL = await uploadFile(photo);
+        let twelfthURL = await uploadFile(twelfth);
+
+        // 🔹 SEND DATA TO GOOGLE SHEET 
+     await fetch("https://script.google.com/macros/s/AKfycbzxfCtCn1xa7UReqIAZb9un0GCd8XVwIuOWJrD9oxz9W1JdwtKpaEdYEw8SKFL-52ZG/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+        name: name,
+        phone: phone,
+        course: course,
+        aadhar: aadharURL,
+        tenth: tenthURL,
+        twelfth: twelfthURL,
+        photo: photoURL
     })
-    .then(res => res.json())
-    .then(res => {
-        alert("✅ Success");
-    })
-    .catch(err => {
-        alert("❌ Upload Failed");
-        console.error(err);
-    });
-});  /
+});
+
+        // 🔹 SUCCESS
+        alert("✅ Admission Submitted Successfully!");
+
+        redirectToCourse(course);
+
+    } catch (error) {
+        console.error(error);
+        alert("❌ Upload Failed. Try again.");
+    }
+});
