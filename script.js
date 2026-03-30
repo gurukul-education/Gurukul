@@ -232,7 +232,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         let twelfthURL = await uploadFile(twelfth);
 
         // 🔹 SEND DATA TO GOOGLE SHEET
-      await fetch("https://script.google.com/macros/s/AKfycbzvrtCIHwUzYclvzcEm-kgofgrx_F2wiVvrhPbvv98LaBWEKSe3xELrFBUz6_gpR2DU/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbxVI3ANcCRwmuu_potKTmNsXCe9kIYOqC63rJHOkOThjxyY-96n1Q1vwUwWKdUMhh-phg/exec", {
     method: "POST",
           mode: "no-cors",
     body: JSON.stringify({
