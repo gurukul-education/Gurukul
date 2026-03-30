@@ -102,20 +102,7 @@ function closePopup() {
 }
 
 
-/* FORM SUBMIT */
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  const passkey = document.getElementById("passkey").value;
-
-  if(passkey !== "GURUKUL123") {
-    alert("Wrong Passkey!");
-    return;
-  }
-
-  // SUCCESS → REDIRECT
-  window.location.href = "admission.html";
-});
 
 document.querySelectorAll('.file-box input').forEach(input => {
   input.addEventListener('change', function () {
@@ -141,34 +128,6 @@ document.addEventListener("click", function(e) {
     }
 });
 
-
-
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    // GET VALUES
-    let name = document.getElementById("studentName").value;
-    let phone = document.getElementById("phone").value;
-    let course = document.getElementById("courseInput").value;
-    let passkey = document.getElementById("passkey").value;
-
-    // VALIDATION
-    if (!name || !phone || !course) {
-        alert("Please fill all details");
-        return;
-    }
-    console.log("Entered:", passkey);
-    // PASSKEY CHECK
-    const correctPasskey = "36249"; // <-- change this
-
-    if (passkey !== correctPasskey) {
-        alert("Wrong Passkey ❌");
-        return;
-    }
-
-    // SUCCESS
-    redirectToCourse(course);
-});
 
 function redirectToCourse(course) {
     let page = "";
@@ -276,9 +235,6 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
       await fetch("https://script.google.com/macros/s/AKfycbzvrtCIHwUzYclvzcEm-kgofgrx_F2wiVvrhPbvv98LaBWEKSe3xELrFBUz6_gpR2DU/exec", {
     method: "POST",
           mode: "no-cors",
-    headers: {
-        "Content-Type": "application/json"
-    },
     body: JSON.stringify({
         name: name,
         phone: phone,
