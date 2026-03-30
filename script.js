@@ -103,6 +103,56 @@ function closePopup() {
 
 
 /* FORM SUBMIT */
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const passkey = document.getElementById("passkey").value;
+
+
+
+  // SUCCESS → REDIRECT
+  window.location.href = "admission.html";
+});
+
+document.querySelectorAll('.file-box input').forEach(input => {
+  input.addEventListener('change', function () {
+    let fileName = this.files[0]?.name || "File selected";
+    this.nextElementSibling.innerText = fileName;
+  });
+});
+
+
+function openCourses() {
+    document.getElementById("courseDropdown").classList.toggle("active");
+}
+
+function selectCourse(course) {
+    document.getElementById("courseInput").value = course;
+    document.getElementById("courseDropdown").classList.remove("active");
+}
+
+document.addEventListener("click", function(e) {
+    const box = document.querySelector(".course-box-select");
+    if (!box.contains(e.target)) {
+        document.getElementById("courseDropdown").classList.remove("active");
+    }
+});
+
+
+
+
+
+function goFullscreen() {
+    const video = document.getElementById("mainVideo");
+
+    if (!document.fullscreenElement) {
+        video.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+
 
 document.getElementById("admissionForm").addEventListener("submit", function(e) {
     e.preventDefault();
