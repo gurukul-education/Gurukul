@@ -171,25 +171,73 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
     let page = "";
 
     switch(course) {
-        case "CCC":
-            page = "admission-ccc.html";
-            break;
-
-        case "TALLY":
-            page = "admission-tally.html";
-            break;
-
         case "PYTHON":
-            page = "admission-python.html";
-            break;
+        page = "admission-python.html";
+        break;
 
-        case "WEB DEVELOPMENT":
-            page = "admission-web-development.html";
-            break;
+    case "C++":
+        page = "admission-cpp.html";
+        break;
 
-        case "PGDCA":
-            page = "admission-pgdca.html";
-            break;
+    case "WEB DEVELOPMENT":
+        page = "admission-web-development.html";
+        break;
+
+    case "BASIC COMPUTER":
+        page = "admission-basic-computer.html";
+        break;
+
+    case "OFFICE MANAGMENT":
+        page = "admission-office-managment.html";
+        break;
+
+    case "OFFICE MANAGMENT HINDI":
+        page = "admission-office-managment-hindi.html";
+        break;
+
+    case "ADVANCE OFFICE MANAGMENT":
+        page = "admission-advance-office-managment.html";
+        break;
+
+    case "TALLY":
+        page = "admission-tally.html";
+        break;
+
+    case "ENGLISH TYPING":
+        page = "admission-english-typing.html";
+        break;
+
+    case "HINDI TYPING":
+        page = "admission-hindi-typing.html";
+        break;
+
+    case "CCC":
+        page = "admission-ccc.html";
+        break;
+
+    case "PGDCA":
+        page = "admission-pgdca.html";
+        break;
+
+    case "NIOS 10TH/12TH":
+        page = "admission-nios-10th-12th.html";
+        break;
+
+    case "BASIC GRAPHIC DESIGNING":
+        page = "admission-basic-graphic-designing.html";
+        break;
+
+    case "PROFESSIONAL GRAPHIC DESIGNING":
+        page = "admission-professional-graphic-designing.html";
+        break;
+
+    case "RS-CIT PRACTICE":
+        page = "admission-rs-cit-practice.html";
+        break;
+
+    case "ACCOUNTS":
+        page = "admission-accounts.html";
+        break;
 
         default:
             alert("⚠️ Invalid course");
