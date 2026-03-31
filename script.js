@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
 
     const words = document.querySelectorAll(".word");
     let current = 0;
@@ -143,11 +144,13 @@ function goFullscreen() {
     }
 }
 
-
+let isSubmitting = false; // 🔥 ADD THIS ABOVE
 
 document.getElementById("admissionForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
+      if (isSubmitting) return; // 🔥 STOP MULTIPLE CALLS
+    isSubmitting = true;
     // 🔹 GET VALUES
     let name = document.getElementById("studentName").value;
     let phone = document.getElementById("phone").value;
