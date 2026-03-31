@@ -166,7 +166,8 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
         alert("⚠️ Please select course");
         return;
     }
-
+     let photoURL = await uploadFile(photo);
+    localStorage.setItem("studentPhoto", photoURL);
      localStorage.setItem("studentName", name);
     localStorage.setItem("studentPhone", phone);
     localStorage.setItem("courseName", course);
@@ -249,6 +250,4 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
             return;
     }
 
-    // 🚀 REDIRECT
-    window.location.href = page;
 });
