@@ -188,8 +188,7 @@ let marksheet10URL = marksheet10 ? await uploadFile(marksheet10) : "";
 let marksheet12 = document.getElementById("marksheet12").files[0];
 let marksheet12URL = marksheet12 ? await uploadFile(marksheet12) : "";
     
-    
-    let photoURL = await uploadFile(photo);
+
     localStorage.setItem("studentPhoto", photoURL);
     localStorage.setItem("aadharURL", aadharURL);
     localStorage.setItem("marksheet10URL", marksheet10URL);
