@@ -1037,3 +1037,42 @@ header, nav, section, .hero, .course-box {
     color: white;
     transform: scale(1.05);
 }
+
++/* Contact Bar Container */
+.contact-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    padding: 12px 25px;
+    border-radius: 40px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    z-index: 999;
+}
+
+/* Icons */
+.contact-bar .icon img {
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.contact-bar .icon:hover img {
+    transform: scale(1.15);
+}
+
+/* Optional: Soft colors for education theme */
+.contact-bar {
+    background: rgba(44, 62, 80, 0.85); /* dark blue */
+}
+
