@@ -27,12 +27,20 @@ body {
 
 /* CARD */
 .card {
-    margin: 50px auto;
+    margin: 60px auto;
     width: 350px;
     padding: 25px;
     border-radius: 20px;
-    backdrop-filter: blur(15px);
-    background: rgba(255,255,255,0.1);
+
+    background: url("pic2.jpg") center/cover no-repeat; /* 🔥 front image */
+    
+    backdrop-filter: blur(0px); /* no blur */
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    position: relative;
+    z-index: 1;
+
 }
 
 /* PROFILE IMAGE */
