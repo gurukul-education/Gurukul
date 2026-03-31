@@ -1,1 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow: hidden;
+}
 
+/* 🌫️ FOG BLUR BACKGROUND */
+.course-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('course-bg.jpg') center/cover no-repeat;
+    filter: blur(20px) brightness(0.5);
+    transform: scale(1.1);
+    z-index: -2;
+}
+
+/* ✨ FLOATING LIGHT EFFECT */
+.glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #00f2ff55, transparent);
+    top: 20%;
+    left: 30%;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+/* 🧊 GLASS CARD */
+.card {
+    margin: 80px auto;
+    width: 350px;
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* 🌈 BORDER GLOW */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(45deg, #00f2ff, #ff00ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+}
+
+/* 🖼️ PROFILE IMAGE */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00f2ff;
+    box-shadow: 0 0 25px #00f2ff88;
+    margin-bottom: 15px;
+}
+
+/* 🧑 NAME */
+h2 {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+/* 📱 INFO */
+p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* 🎓 COURSE */
+h3 {
+    color: #00f2ff;
+    margin: 10px 0 15px;
+}
+
+/* 🔗 LINKS */
+.links a {
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 10px;
+    color: #00f2ff;
+    text-decoration: none;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+}
+
+.links a:hover {
+    background: #00f2ff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* 🎯 ICON STYLE */
+.links a::before {
+    content: "📄 ";
+}
