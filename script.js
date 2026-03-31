@@ -160,15 +160,18 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
     // 🔐 DEFINE PASSKEY
     const correctPasskey = "1234"; // 👉 change this
 
+    
     // ❌ WRONG PASSKEY
     if (passkey !== correctPasskey) {
         alert("❌ Wrong Passkey");
+        isSubmitting = false;
         return;
     }
 
     // ❌ NO COURSE SELECTED
     if (!course) {
         alert("⚠️ Please select course");
+        isSubmitting = false;
         return;
     }
     
@@ -272,9 +275,11 @@ let marksheet12URL = marksheet12 ? await uploadFile(marksheet12) : "";
 
         default:
             alert("⚠️ Invalid course");
+            isSubmitting = false;
             return;
     }
 
+    isSubmitting = false;
      window.location.href = page;
     
 });
