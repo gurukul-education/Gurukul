@@ -177,21 +177,22 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
     
     // 📸 PHOTO
 let photo = document.getElementById("photo").files[0];
-let photoURL = photo ? await uploadFile(photo) : "";
+ let photoURL = await uploadFile(photo);
 
 // 🪪 AADHAR
 let aadhar = document.getElementById("aadhar").files[0];
-let aadharURL = aadhar ? await uploadFile(aadhar) : "";
+let aadharURL = await uploadFile(aadhar);
 
 // 📄 10th MARKSHEET
 let marksheet10 = document.getElementById("marksheet10").files[0];
-let marksheet10URL = marksheet10 ? await uploadFile(marksheet10) : "";
+let marksheet10URL = await uploadFile(marksheet10);
 
 // 📄 12th MARKSHEET
 let marksheet12 = document.getElementById("marksheet12").files[0];
-let marksheet12URL = marksheet12 ? await uploadFile(marksheet12) : "";
+let marksheet12URL = await uploadFile(marksheet12);
     
-
+  let photo = document.getElementById("photo").files[0];
+    let photoURL = await uploadFile(photo);
     localStorage.setItem("studentPhoto", photoURL);
     localStorage.setItem("aadharURL", aadharURL);
     localStorage.setItem("marksheet10URL", marksheet10URL);
