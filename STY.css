@@ -1,114 +1,106 @@
+/* 🌐 GLOBAL */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    overflow: hidden;
+    background: linear-gradient(135deg, #eaf2f8, #d6eaf8);
+    color: #2c3e50;
+    text-align: center;
+    min-height: 100vh;
 }
 
-/* 🌫️ FOG BLUR BACKGROUND */
+/* 🌫️ SOFT BLUR BACKGROUND */
 .course-bg {
     position: fixed;
     width: 100%;
     height: 100%;
     background: url('course-bg.jpg') center/cover no-repeat;
-    filter: blur(20px) brightness(0.5);
-    transform: scale(1.1);
-    z-index: -2;
-}
-
-/* ✨ FLOATING LIGHT EFFECT */
-.glow {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #00f2ff55, transparent);
-    top: 20%;
-    left: 30%;
-    filter: blur(80px);
+    filter: blur(10px) brightness(0.9);
+    opacity: 0.3;
     z-index: -1;
 }
 
-/* 🧊 GLASS CARD */
+/* 🧊 CARD (CLEAN GLASS LOOK) */
 .card {
     margin: 80px auto;
-    width: 350px;
+    width: 360px;
     padding: 30px;
-    border-radius: 25px;
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     text-align: center;
-    transition: 0.4s ease;
-    position: relative;
+    transition: 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-/* 🌈 BORDER GLOW */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    padding: 2px;
-    background: linear-gradient(45deg, #00f2ff, #ff00ff);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    pointer-events: none;
+    transform: translateY(-5px);
 }
 
 /* 🖼️ PROFILE IMAGE */
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #00f2ff;
-    box-shadow: 0 0 25px #00f2ff88;
+    border: 3px solid #3498db;
     margin-bottom: 15px;
 }
 
 /* 🧑 NAME */
 h2 {
     margin: 10px 0;
+    font-size: 22px;
     font-weight: 600;
 }
 
 /* 📱 INFO */
 p {
-    color: #ccc;
+    margin: 5px 0;
+    color: #5d6d7e;
     font-size: 14px;
 }
 
-/* 🎓 COURSE */
+/* 🎓 COURSE TITLE */
 h3 {
-    color: #00f2ff;
-    margin: 10px 0 15px;
+    color: #2e86c1;
+    margin: 12px 0 18px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* 🔗 LINKS */
+.links {
+    margin-top: 10px;
+}
+
 .links a {
     display: block;
     margin: 8px 0;
-    padding: 8px;
+    padding: 10px;
     border-radius: 10px;
-    color: #00f2ff;
     text-decoration: none;
+    color: #2e86c1;
+    background: #f4f6f7;
     transition: 0.3s;
-    background: rgba(255,255,255,0.05);
+    font-size: 14px;
+    border: 1px solid #d5dbdb;
 }
 
+/* ✨ HOVER EFFECT */
 .links a:hover {
-    background: #00f2ff;
-    color: black;
-    transform: scale(1.05);
+    background: #2e86c1;
+    color: white;
+    transform: scale(1.02);
 }
 
-/* 🎯 ICON STYLE */
-.links a::before {
-    content: "📄 ";
+/* 🎯 OPTIONAL BADGE */
+.badge {
+    display: inline-block;
+    background: #2e86c1;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
