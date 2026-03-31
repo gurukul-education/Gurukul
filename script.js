@@ -144,6 +144,7 @@ function goFullscreen() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
 let isSubmitting = false; // 🔥 ADD THIS ABOVE
 
 document.getElementById("admissionForm").addEventListener("submit", async function(e) {
@@ -297,4 +298,8 @@ async function uploadFile(file) {
 
     let data = await res.json();
     return data.secure_url;
+    
 }
+
+    }); // closes submit
+}); // closes DOMContentLoaded
