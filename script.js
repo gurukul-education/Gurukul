@@ -144,7 +144,6 @@ function goFullscreen() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 let isSubmitting = false; // 🔥 ADD THIS ABOVE
 
 document.getElementById("admissionForm").addEventListener("submit", async function(e) {
@@ -161,42 +160,21 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
     // 🔐 DEFINE PASSKEY
     const correctPasskey = "1234"; // 👉 change this
 
-    
     // ❌ WRONG PASSKEY
     if (passkey !== correctPasskey) {
         alert("❌ Wrong Passkey");
-        isSubmitting = false;
         return;
     }
 
     // ❌ NO COURSE SELECTED
     if (!course) {
         alert("⚠️ Please select course");
-        isSubmitting = false;
         return;
     }
     
-    // 📸 PHOTO
-let photo = document.getElementById("photo").files[0];
- let photoURL = await uploadFile(photo);
-
-// 🪪 AADHAR
-let aadhar = document.getElementById("aadhar").files[0];
-let aadharURL = await uploadFile(aadhar);
-
-// 📄 10th MARKSHEET
-let marksheet10 = document.getElementById("marksheet10").files[0];
-let marksheet10URL = await uploadFile(marksheet10);
-
-// 📄 12th MARKSHEET
-let marksheet12 = document.getElementById("marksheet12").files[0];
-let marksheet12URL = await uploadFile(marksheet12);
-    
- 
+    let photo = document.getElementById("photo").files[0];
+    let photoURL = await uploadFile(photo);
     localStorage.setItem("studentPhoto", photoURL);
-    localStorage.setItem("aadharURL", aadharURL);
-    localStorage.setItem("marksheet10URL", marksheet10URL);
-    localStorage.setItem("marksheet12URL", marksheet12URL);
     localStorage.setItem("studentName", name);
     localStorage.setItem("studentPhone", phone);
     localStorage.setItem("courseName", course);
@@ -276,11 +254,9 @@ let marksheet12URL = await uploadFile(marksheet12);
 
         default:
             alert("⚠️ Invalid course");
-            isSubmitting = false;
             return;
     }
 
-    isSubmitting = false;
      window.location.href = page;
     
 });
@@ -298,8 +274,4 @@ async function uploadFile(file) {
 
     let data = await res.json();
     return data.secure_url;
-    
 }
-
-    }); // closes submit
-}); // closes DOMContentLoaded
