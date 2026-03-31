@@ -1038,7 +1038,7 @@ header, nav, section, .hero, .course-box {
     transform: scale(1.05);
 }
 
-+/* Contact Bar Container */
+/* Contact Bar Container */
 .contact-bar {
     position: fixed;
     bottom: 20px;
@@ -1075,4 +1075,3 @@ header, nav, section, .hero, .course-box {
 .contact-bar {
     background: rgba(44, 62, 80, 0.85); /* dark blue */
 }
-
