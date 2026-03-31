@@ -167,6 +167,11 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
         return;
     }
 
+     localStorage.setItem("studentName", name);
+    localStorage.setItem("studentPhone", phone);
+    localStorage.setItem("courseName", course);
+
+    
     // ✅ REDIRECT BASED ON COURSE
     let page = "";
 
