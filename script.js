@@ -145,10 +145,12 @@ function goFullscreen() {
 
 
 
-document.getElementById("admissionForm").addEventListener("submit", function(e) {
+document.getElementById("admissionForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
     // 🔹 GET VALUES
+    let name = document.getElementById("studentName").value;
+    let phone = document.getElementById("phone").value;
     let course = document.getElementById("courseInput").value;
     let passkey = document.getElementById("passkey").value;
 
@@ -166,9 +168,11 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
         alert("⚠️ Please select course");
         return;
     }
-     let photoURL = await uploadFile(photo);
+    
+    let photo = document.getElementById("photo").files[0];
+    let photoURL = await uploadFile(photo);
     localStorage.setItem("studentPhoto", photoURL);
-     localStorage.setItem("studentName", name);
+    localStorage.setItem("studentName", name);
     localStorage.setItem("studentPhone", phone);
     localStorage.setItem("courseName", course);
 
@@ -250,4 +254,21 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
             return;
     }
 
+     window.location.href = page;
+    
 });
+async function uploadFile(file) {
+    let formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "student_upload");
+
+    let res = await
+        fetch("https://api.cloudinary.com/v1_1/dr1wbu1og/upload", {
+        method: "POST",
+        body: formData
+
+    });
+
+    let data = await res.json();
+    return data.secure_url;
+}
