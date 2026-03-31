@@ -186,7 +186,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
     switch(course) {
         case "PYTHON":
         page = "admission-python.html";
-        break;9lo
+        break;
     case "C++":
         page = "admission-cpp.html";
         break;
