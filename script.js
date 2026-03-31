@@ -187,6 +187,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         case "PYTHON":
         page = "admission-python.html";
         break;
+
     case "C++":
         page = "admission-cpp.html";
         break;
@@ -199,17 +200,16 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         page = "admission-basic-computer.html";
         break;
 
-    case "OFFICE MANAGEMENT":
-        page = "admission-office-management.html";
+    case "OFFICE MANAGMENT":
+        page = "admission-office-managment.html";
         break;
 
-    case "OFFICE MANAGEMENT HINDI":
-        page = "admission-office-management-hindi.html";
+    case "OFFICE MANAGMENT HINDI":
+        page = "admission-office-managment-hindi.html";
         break;
 
-            
-    case "ADVANCE OFFICE MANAGEMENT":
-        page = "admission-advance-office-management.html";
+    case "ADVANCE OFFICE MANAGMENT":
+        page = "admission-advance-office-managment.html";
         break;
 
     case "TALLY":
