@@ -1,6 +1,22 @@
- {
+* {
     -webkit-tap-highlight-color: transparent;
 }
+
+a, button, input, div {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+/* REMOVE CLICK FLASH */
+a:focus, a:active,
+button:focus, button:active,
+.icon:focus, .icon:active {
+    outline: none;
+    background: transparent;
+}
+
+
+
 
 {
     margin: 0;
@@ -1063,6 +1079,21 @@ header, nav, section, .hero, .course-box {
 }
 
 <style>
+
+.contact-bar a {
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* VERY IMPORTANT */
+.contact-bar a:focus,
+.contact-bar a:active {
+    background: transparent;
+    outline: none;
+}
+
+
 /* ICON BUTTON */
 .contact-bar .icon {
     width: 45px;
@@ -1103,6 +1134,13 @@ header, nav, section, .hero, .course-box {
 } 
 </style>
 
+.contact-bar .icon {
+    transition: transform 0.2s ease;
+}
+
+.contact-bar .icon:active {
+    transform: scale(0.9);
+}
 
 @media (max-width: 600px) {
     .contact-bar {
