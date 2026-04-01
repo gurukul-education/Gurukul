@@ -1,10 +1,3 @@
-
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* RESET */
 * {
     margin: 0;
@@ -15,17 +8,16 @@ img {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0d1b2a;
+    background: #0f172a;
     color: white;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     position: relative;
     width: 100%;
     height: 90vh;
-    overflow: hidden;
 }
 
 .hero img {
@@ -33,161 +25,109 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-}
 
-.hero h1, .hero p {
-    position: relative;
-    z-index: 2;
-}
-
-/* MOTIVATION */
-.motivation {
-    text-align: center;
-    padding: 60px 20px;
-    background: #1b263b;
-}
-
-.motivation h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-/* GALLERY */
-.gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 50px 20px;
-}
-
-.img-box {
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.img-box img {
-    width: 100%;
-    transition: 0.4s;
-}
-
-.img-box:hover img {
-    transform: scale(1.05);
-}
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    padding: 50px;
-    background: #1b263b;
-}
-
-/* ANIMATIONS */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
-
-.delay {
-    animation-delay: 0.5s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* SCROLL ANIMATION */
-.slide-up, .slide-left, .slide-right {
-    opacity: 0;
-    transition: 1s;
-}
-
-.slide-up.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.slide-left.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.slide-right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.slide-up {
-    transform: translateY(50px);
-}
-
-.slide-left {
-    transform: translateX(-80px);
-}
-
-.slide-right {
-    transform: translateX(80px);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 22px;
-    }
-
-    .motivation h2 {
-        font-size: 20px;
-    }
-}
-
+/* DARK OVERLAY */
 .hero::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0,0,0,0.5); /* dark effect */
+    inset: 0;
+    background: rgba(0,0,0,0.55);
 }
 
+/* TEXT CENTER */
 .hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    color: white;
     text-align: center;
     z-index: 2;
 }
 
-.library-section {
+.hero-text h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* SECTION */
+.section {
+    padding: 30px 15px;
+}
+
+/* GRID IMAGES */
+.library {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
 }
 
+/* IMAGE CARDS */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+/* HOVER */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.card {
+    animation: float 5s ease-in-out infinite;
+}
+
+/* CONTACT SECTION */
+.contact {
+    text-align: center;
+    padding: 40px 20px;
+    background: #020617;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.contact p {
+    opacity: 0.8;
+}
+
+/* 📱 MOBILE FIX */
 @media (max-width: 768px) {
-    .library-section {
-        grid-template-columns: 1fr;  /* 🔥 THIS FIXES YOUR ISSUE */
-    }
 
     .hero {
-        height: 70vh; /* smaller for mobile */
+        height: 70vh;
     }
-}
-section {
-    width: 100%;
-    overflow: hidden;
+
+    .hero-text h1 {
+        font-size: 22px;
+    }
+
+    .library {
+        grid-template-columns: 1fr;  /* 🔥 STACK IMAGES */
+    }
+
+    .card img {
+        height: 200px;
+    }
 }
