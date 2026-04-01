@@ -29,7 +29,7 @@ function toggleTheme() {
     if (document.body.classList.contains("dark-mode")) {
         btn.textContent = "☀️";
     } else {
-        btn.textContent = "🌙";
+        btn.textContent = "⚙️";
     }
 }
 
