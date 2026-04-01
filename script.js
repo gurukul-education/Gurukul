@@ -275,3 +275,20 @@ async function uploadFile(file) {
     let data = await res.json();
     return data.secure_url;
 }
+
+
+
+
+
+const words = document.querySelectorAll(".word");
+let index = 0;
+
+setInterval(() => {
+    words[index].classList.remove("active");
+    words[index].classList.add("exit");
+
+    index = (index + 1) % words.length;
+
+    words[index].classList.remove("exit");
+    words[index].classList.add("active");
+}, 2000);
