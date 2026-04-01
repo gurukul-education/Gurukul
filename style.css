@@ -1159,3 +1159,57 @@ header, nav, section, .hero, .course-box {
         height: 18px;
     }
 }
+
+
+
+
+
+.call-btn {
+    position: fixed; /* floating like screenshot */
+    top: 20px;
+    right: 20px;
+
+    padding: 12px 28px;
+    border-radius: 50px;
+    
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hover = fill color like your website */
+.call-btn:hover {
+    background: linear-gradient(135deg, #4facfe, #00c6ff); /* same as library vibe */
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* Click effect */
+.call-btn:active {
+    transform: scale(0.95);
+
+}
+    
+
+
+.call-btn {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(0,198,255,0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0,198,255,0.8);
+    }
+}
+
