@@ -1,1 +1,141 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d1b2a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('img1.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+/* MOTIVATION */
+.motivation {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1b263b;
+}
+
+.motivation h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* GALLERY */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.img-box {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.img-box img {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.img-box:hover img {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 50px;
+    background: #1b263b;
+}
+
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.delay {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLL ANIMATION */
+.slide-up, .slide-left, .slide-right {
+    opacity: 0;
+    transition: 1s;
+}
+
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-up {
+    transform: translateY(50px);
+}
+
+.slide-left {
+    transform: translateX(-80px);
+}
+
+.slide-right {
+    transform: translateX(80px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .motivation h2 {
+        font-size: 20px;
+    }
+}
