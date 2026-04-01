@@ -1213,3 +1213,34 @@ header, nav, section, .hero, .course-box {
     }
 }
 
+/* 🔥 CALL BUTTON SPECIAL DESIGN */
+.call-btn {
+    background: transparent !important;
+    color: white !important;
+
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50px;
+
+    padding: 8px 20px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER = FILLED LIKE LIBRARY COLOR */
+.call-btn:hover {
+    background: linear-gradient(135deg, #6ea2b3, #00c6ff) !important;
+    border: none;
+    box-shadow: 0 0 12px rgba(0,198,255,0.6);
+    transform: scale(1.05);
+}
+
+/* CLICK EFFECT */
+.call-btn:active {
+    transform: scale(0.95);
+}
+
+.call-btn {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+}
