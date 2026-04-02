@@ -1216,3 +1216,28 @@ header, nav, section, .hero, .course-box {
 .call-btn:active {
     transform: scale(0.95);
 }
+
+.menu-container {
+    display: flex;
+    flex-direction: row;   /* keep horizontal */
+    flex-wrap: nowrap;     /* prevent vertical stacking */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-item {
+    min-width: 120px;  /* adjust as needed */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;  /* allows horizontal scroll if needed */
+    }
+}
+
+.menu-item {
+    display: inline-block;
+}
