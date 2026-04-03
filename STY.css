@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    padding-bottom: 120px;  /* space for fixed footer */
+    padding-top: 100px;  /* space for fixed footer */
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #eaf2f8, #d6eaf8);
     color: #2c3e50;
@@ -241,7 +241,7 @@ h3 {
 /* Govt Certification Bottom Left */
 .govt-footer {
     position: fixed;
-    bottom: 15px;
+    top: 15px;   /* 🔥 moved to top */
     left: 50%;
     transform: translateX(-50%);
 
@@ -249,7 +249,7 @@ h3 {
     align-items: center;
     gap: 12px;
 
-    font-size: 13px;   /* 🔥 slightly bigger text */
+    font-size: 13px;
     color: #000;
 
     background: rgba(255,255,255,0.95);
@@ -261,9 +261,8 @@ h3 {
 
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 
-    backdrop-filter: blur(6px); /* 🔥 premium look */
+    backdrop-filter: blur(6px);
 }
-
 /* Logo size */
 .govt-logo {
     width: 45px;     /* 🔥 bigger */
@@ -274,7 +273,7 @@ h3 {
 }
 
 /* Text styling */
-.govt-cert p {
+.govt-footer p {
     margin: 0;
     line-height: 1.3;
 }
