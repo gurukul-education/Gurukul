@@ -252,8 +252,8 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         page = "admission-accounts.html";
         break;
 
-     case "ECCE":
-        page = "admission-ECCE.html";
+     case "ECC":
+        page = "admission-ECC.html";
         break;
 
 
