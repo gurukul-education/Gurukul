@@ -6,6 +6,7 @@
 body {
     margin: 0;
     padding: 0;
+    padding-bottom: 120px;  /* space for fixed footer */
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #eaf2f8, #d6eaf8);
     color: #2c3e50;
@@ -47,7 +48,7 @@ body {
 
 /* 🧊 CARD (CLEAN GLASS LOOK) */
 .card {
-    margin: 40px auto 120px auto;
+    margin: 40px auto;
     width: 360px;
     padding: 30px;
     padding-bottom: 80px;   /* 🔥 ADD THIS */
