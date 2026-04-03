@@ -297,3 +297,25 @@ setInterval(() => {
     words[index].classList.remove("exit");
     words[index].classList.add("active");
 }, 2000);
+
+
+Ni<script>
+let selectedCourse = "";
+const correctPass = "12345"; // 🔑 change this
+
+function openPopup(courseLink) {
+    selectedCourse = courseLink;
+    document.getElementById("passkeyPopup").style.display = "flex";
+}
+
+function checkPass() {
+    const input = document.getElementById("passInput").value;
+
+    if(input === correctPass){
+        window.location.href = selectedCourse;
+    } else {
+        document.getElementById("errorMsg").innerText = "Wrong passkey!";
+    }
+}
+</script>
+
