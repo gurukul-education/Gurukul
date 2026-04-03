@@ -252,6 +252,11 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
         page = "admission-accounts.html";
         break;
 
+     case "ECC":
+        page = "admission-ECC.html";
+        break;
+
+
         default:
             alert("⚠️ Invalid course");
             return;
