@@ -45,7 +45,6 @@ body {
     margin: 80px auto;
     width: 360px;
     padding: 30px;
-    padding-bottom: 80px;   /* 🔥 ADD THIS */
     border-radius: 20px;
     backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.15);
@@ -228,8 +227,8 @@ h3 {
 
 
 /* Student Box must be relative */
-.card {
-    position: relative;   /* 🔥 THIS IS THE REAL FIX */
+.student-box {
+    position: relative;
 }
 
 /* Govt Certification Bottom Left */
@@ -237,19 +236,14 @@ h3 {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    right: 10px;
-    
     display: flex;
     align-items: center;
     gap: 8px;
-    
     font-size: 11px;
     color: #000;
-    
     background: rgba(255,255,255,0.85);
     padding: 5px 8px;
     border-radius: 8px;
-    
     max-width: 90%;
 }
 
@@ -264,4 +258,3 @@ h3 {
     margin: 0;
     line-height: 1.3;
 }
-
