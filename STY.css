@@ -111,7 +111,7 @@ body {
 
 
 .info-box {
-    margin-top: 15px;
+    margin-top: 11px;
     padding: 1px;
 
     border-radius: 99px;
@@ -241,7 +241,7 @@ h3 {
 /* Govt Certification Bottom Left */
 .govt-footer {
     position: fixed;
-    top: 15px;   /* 🔥 moved to top */
+    bottom: 15px;   /* 🔥 moved to top */
     left: 50%;
     transform: translateX(-50%);
 
