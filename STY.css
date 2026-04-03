@@ -223,3 +223,39 @@ h3 {
         transform: translateY(0);
     }
 }
+
+
+
+/* Student Box must be relative */
+.student-box {
+    position: relative;
+}
+
+/* Govt Certification Bottom Left */
+.govt-cert {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #000;
+    background: rgba(255,255,255,0.85);
+    padding: 5px 8px;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+/* Logo size */
+.govt-logo {
+    width: 25px;
+    height: 25px;
+}
+
+/* Text styling */
+.govt-cert p {
+    margin: 0;
+    line-height: 1.3;
+}
+
