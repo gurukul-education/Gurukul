@@ -10,36 +10,34 @@
   <h2 class="course-title">Our Courses</h2>
 <div class="course-container">
 
-  <a href="marketing.html" class="course-box" onclick="return checkPassword(event, 'marketing.html', 'mark123')">
+<a href="#" onclick="openPopup('marketing.html','mark123')" class="course-box">
    
     <img src="markt.png.png" alt="Social Media">
     <h3>Social Media Marketing</h3>
     <p>SEO, Social Media, Google Ads, YouTube Marketing</p>
   </a>
 
-<a href="programming.html" class="course-box" onclick="return checkPassword(event, 'programming.html', 'code123')">
-   
+   <a href="#" onclick="openPopup('programming.html','code123')" class="course-box">
+      
     <img src="cod.png.png" alt="Programming">
     <h3>Programming</h3>
     <p>C, C++, Java, Python, Web Designing</p>
   </a>
 
-<a href="computer.html" class="course-box" onclick="return checkPassword(event, 'computer.html', 'comp123')">
-   
+<a href="#" onclick="openPopup('computer.html','comp123')" class="course-box">
     <img src="comp.png.png" alt="Computer">
     <h3>Computer Courses</h3>
     <p>Basic Computer, MS Office, Tally, Typing</p>
   </a>
 
-<a href="nios.html" class="course-box" onclick="return checkPassword(event, 'nios.html', 'nios123')">
-   
+<a href="#" onclick="openPopup('nios.html','nios123')" class="course-box">
     <img src="eng.png.png" alt="NIOS">
     <h3>NIOS 10th & 12th</h3>
     <p>CCC, PGDCA, English Speaking</p>
   </a>
 
-  <a href="design.html" class="course-box" onclick="return checkPassword(event, 'design.html', 'design123')">
-
+  
+<a href="#" onclick="openPopup('design.html','design123')" class="course-box">
    
     <img src="graf.png.png" alt="Design">
     <h3>Graphic Design</h3>
@@ -50,21 +48,41 @@
   
 </section>
 
+
+   <div id="passwordPopup" class="popup">
+  <div class="popup-box">
+    <h2>LOGIN</h2>
+    
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    
+    <button onclick="submitPassword()">Unlock</button>
+    <p id="errorMsg"></p>
+  </div>
+   </div>
+   
+
    <script>
-function checkPassword(event, link, correctPassword) {
-    event.preventDefault();
+let currentLink = "";
+let currentPassword = "";
 
-    var password = prompt("Enter password:");
+function openPopup(link, password) {
+    currentLink = link;
+    currentPassword = password;
+    document.getElementById("passwordPopup").style.display = "flex";
+}
 
-    if (password === correctPassword) {
-        window.location.href = link;
+function submitPassword() {
+    let entered = document.getElementById("passwordInput").value;
+
+    if (entered === currentPassword) {
+        window.location.href = currentLink;
     } else {
-        alert("Wrong password!");
+        document.getElementById("errorMsg").innerText = "Wrong Password!";
     }
-
-    return false;
 }
    </script>
+
+   
 
 </body>
 </html>
