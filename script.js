@@ -158,7 +158,7 @@ document.getElementById("admissionForm").addEventListener("submit", async functi
     let passkey = document.getElementById("passkey").value;
 
     // 🔐 DEFINE PASSKEY
-    const correctPasskey = "1234"; // 👉 change this
+    const correctPasskey = "07627"; // 👉 change this
 
     // ❌ WRONG PASSKEY
     if (passkey !== correctPasskey) {
