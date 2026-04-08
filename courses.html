@@ -54,14 +54,14 @@
     <h2>LOGIN</h2>
     
     <input type="password" id="passwordInput" placeholder="Enter Password">
-    
-    <button onclick="submitPassword()">Unlock</button>
     <p id="errorMsg"></p>
+    <button onclick="submitPassword()">Unlock</button>
+    
   </div>
    </div>
    
 
-   <script>
+<script>
 let currentLink = "";
 let currentPassword = "";
 
@@ -69,18 +69,28 @@ function openPopup(link, password) {
     currentLink = link;
     currentPassword = password;
     document.getElementById("passwordPopup").style.display = "flex";
+
+    // reset input & error
+    document.getElementById("passwordInput").value = "";
+    document.getElementById("errorMsg").classList.remove("show");
 }
 
 function submitPassword() {
     let entered = document.getElementById("passwordInput").value;
+    let error = document.getElementById("errorMsg");
 
     if (entered === currentPassword) {
         window.location.href = currentLink;
     } else {
-        document.getElementById("errorMsg").innerText = "Wrong Password!";
+        error.innerText = "Wrong Password!";
+        error.classList.add("show");
     }
 }
-   </script>
+
+function closePopup() {
+    document.getElementById("passwordPopup").style.display = "none";
+}
+</script>
 
    
 
