@@ -1282,16 +1282,31 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Back button (simple, no background) */
-.back-btn {
-  margin-top: 10px;
-  background: transparent;
-  border: none;
-  color: #ccc;
-  cursor: pointer;
-  font-size: 14px;
+/* ERROR + BACK ROW */
+.error-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
 }
 
+/* ERROR TEXT */
+#errorMsg {
+    color: #ff4d4d;
+    font-size: 14px;
+}
+
+/* BACK BUTTON (TEXT STYLE) */
+.back-btn {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
 .back-btn:hover {
-  color: white;
+    opacity: 1;
+    text-decoration: underline;
 }
