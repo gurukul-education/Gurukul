@@ -1310,3 +1310,35 @@ body {
     opacity: 1;
     text-decoration: underline;
 }
+
+
+.video-wrapper {
+    position: relative;
+}
+
+/* 🔥 Normal view logo */
+.video-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    background: url("mainlogo.png") no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+}
+
+/* 🔥 FULLSCREEN FIX */
+video:fullscreen::after {
+    content: "";
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background: url("mainlogo.png") no-repeat center;
+    background-size: contain;
+    z-index: 999999;
+}
+
